@@ -16,7 +16,7 @@ class Solution {
         return 1 + (num - 1) % 9;
     }
 }
-
+```
 ## 2. First Non-Repeating Character
 
 **Concept:**
@@ -56,7 +56,7 @@ class Solution {
         return -1; 
     }
 }
-
+```
 
 ## 3. Alice & Bob Number Game
 
@@ -103,3 +103,4 @@ class Solution {
     }
 }
 
+```
