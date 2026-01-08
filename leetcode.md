@@ -104,3 +104,73 @@ class Solution {
 }
 
 ```
+# 5.Pangram 
+
+A **pangram** is a sentence that contains all **26 English letters** at least once.  
+Example: `"The quick brown fox jumps over the lazy dog"`.
+
+## Logic
+- Convert the string to lowercase.
+- Use a boolean array of size 26.
+- Mark each alphabet found.
+- At the end, check if all 26 letters are present.
+
+## Code
+```java
+public boolean isPangram(String s) {
+    boolean[] seen = new boolean[26];
+    s = s.toLowerCase();
+
+    for (char c : s.toCharArray()) {
+        if (c >= 'a' && c <= 'z') {
+            seen[c - 'a'] = true;
+        }
+    }
+
+    for (boolean b : seen) {
+        if (!b) return false;
+    }
+    return true;
+}
+```
+# 5.Maximum Number of Words in a Sentence 
+
+## Topic
+Find the maximum number of words in any sentence from an array of sentences.
+
+---
+
+## Logic / Concept
+- A sentence contains words separated by **spaces**.  
+- Count the number of spaces in each sentence → number of words = spaces + 1.  
+- Track the **maximum word count** among all sentences.  
+- Return the maximum count.
+
+---
+
+## Code
+```java
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int max = 0;
+
+        for (String sentence : sentences) {
+            int count = 1; // start with 1 word
+            for (int i = 0; i < sentence.length(); i++) {
+                if (sentence.charAt(i) == ' ') {
+                    count++;
+                }
+            }
+            if (count > max) {
+                max = count;
+            }
+        }
+
+        return max;
+    }
+}
+```
+
+
+
+
